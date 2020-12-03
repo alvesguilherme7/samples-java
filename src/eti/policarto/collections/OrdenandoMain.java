@@ -27,7 +27,18 @@ public class OrdenandoMain {
 
         printEscalacao(time);
 
-        // é possível simplificar a expressão anterior com lambdas (funções anônimas)
+        // podemos usar também classes anônimas
+        time.sort(new Comparator<Jogador>() {
+            @Override
+            public int compare(Jogador o1, Jogador o2) {
+                return o1.getNumero() - o2.getNumero();
+            }
+        });
+
+        // simplicar com uma expressão lambda
+        time.sort((o1,o2) -> o1.getNumero() - o2.getNumero());
+
+        // simplificando mais ainda
         time.sort(Comparator.comparingInt(Jogador::getNumero));
 
         printEscalacao(time);
@@ -44,9 +55,7 @@ public class OrdenandoMain {
 
     public static void printEscalacao(List<Jogador> list){
         System.out.println("--------");
-        for (Jogador l : list) {
-            System.out.println(l);
-        }
+        list.forEach(System.out::println);
         System.out.println("--------");
     }
 }
