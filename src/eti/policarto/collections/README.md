@@ -37,3 +37,8 @@ Vector<Tipo> a = new Vector();
 Mesmo comportamento do Linked, mas é usado quando se deseja manter a unicidade da lista trabalhando com múltiplas threads.
 
 
+
+# Nota
+As listas aceitam índices duplicados.
+Para resolver este problema, há uma outra família de coleções chamadas Set, HashMap e etc.
+ 
